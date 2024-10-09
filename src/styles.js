@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+
 export const UstKutu = styled.div`
   width: 100%;
   height: 1080px;
@@ -24,7 +25,7 @@ export const Body = styled.body`
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 3036px;
+  height: 1080px;
   background: #FAF7F2;
 `;
 
@@ -71,3 +72,32 @@ export const AciktimLink = styled.a`
   margin: 30px;
   display: inline-block;
 `;
+
+export const FormUstDiv = styled.div`
+  width: 1920px;
+height: 207px;
+border: 0px 0px 1px 0px;
+background: #CE2829;
+text-align: center;
+display: flex;
+flex-direction: column;
+`
+export const FormUstP = styled.p`
+color: white;
+font-family: 'Barlow', sans-serif;
+transform: translateX(-175px);
+`
+export const FormAnaDiv = styled.div`
+
+`
+
+export const UrunBilgi = styled.div`
+display: flex;
+flex-direction: column;
+`
+export const Wrapper = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+
+`
