@@ -85,19 +85,177 @@ flex-direction: column;
 export const FormUstP = styled.p`
 color: white;
 font-family: 'Barlow', sans-serif;
-transform: translateX(-175px);
+transform: translateX(-160px);
 `
 export const FormAnaDiv = styled.div`
-
+font-family: 'Barlow', sans-serif;
 `
 
 export const UrunBilgi = styled.div`
 display: flex;
 flex-direction: column;
+
 `
 export const Wrapper = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
+gap: 30px;
+`
+export const FiyatPuan = styled.div`
+display: flex;
+`
+export const Fiyat = styled.div`
+display: flex;
+justify-content: flex-start;
+flex-basis : 80%
+`
+export const Puan = styled.div`
+display: flex;
+justify-content: flex-end;
+gap:50px;
+align-items: center;
+`
+export const Options1 = styled.div`
+display:flex;
+
+`
+export const Boyut = styled.div`
+display: flex;
+flex-direction: column;
+gap: 10px;
+flex-basis:50%
+`
+export const BoyutOption = styled.form`
+display: flex;
+flex-direction: column;
+gap: 20px;
+`
+
+export const Hamur = styled.div`
+
+`
+export const HamurOption = styled.form`
+
+`
+export const AraYazı = styled.div`
+display: flex;
+flex-direction: column;
+padding-top: 40px;
+`
+
+export const Options2 = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  row-gap:20px;
+  max-height: 200px;
+  padding-top: 40px;
+`;
+
+export const Not = styled.div`
+padding-top: 40px;
+`
+export const IsimDiv = styled.form`
+display:flex;
+flex-direction: column;
+row-gap: 5px;
+`
+export const IsimInput = styled.input`
+max-width: 200px;
+border: 1px solid #D9D9D9;
+border-radius: 6px
+`
+export const TextArea = styled.input`
+border: 1px solid #D9D9D9;
+border-radius: 6px;
+height: 75px
+`
+export const Cizgi = styled.div`
+ border: 1px solid #5F5F5F80;
+ margin-top: 40px;
+ margin-bottom: 40px;
+`;
+
+export const SiparisSayı = styled.div`
+display:flex;
+width:50%;
+`
+export const Tutar = styled.div`
+display:flex;
+flex-direction:column;
+width:100%;
+border: 1px solid #D9D9D9;
+border-radius:6px;
+`
+export const Azalt = styled.button`
+width:100%;
+max-height:18%;
+background:#FDC913;
+border-top-left-radius:6px;
+border-bottom-left-radius:6px;
+border:none;
+font-weight: bold;
+font-size:16px;
+`
+export const Sayı = styled.div`
+width:100%;
+max-height:18%;
+display: flex;
+justify-content: center;
+align-items: center;
+border:1px solid #D9D9D9;
+font-weight: bold;
+
+
+`
+export const Arttır = styled.button`
+width:100%;
+max-height:18%;
+background:#FDC913;
+border-top-right-radius:6px;
+border-bottom-right-radius:6px;
+border:none;
+font-weight: bold;
+font-size:16px;
+`
+
+
+export const Sonuc = styled.div`
+ margin:35px
+`
+export const SiparisVer = styled.button`
+ width:100%;
+ padding:15px 0px 15px 0px;
+ font-weight: bold;
+ font-family: 'Barlow', sans-serif;
+ background:#FDC913;
+border-radius:6px;
+border:none;
+`
+export const AltKısım = styled.div`
+display: flex;
+gap:10px;
+margin-bottom:100px;
+`
+export const SonucYazi = styled.div`
+width:100%
+`
+export const ButtonDiv = styled.div`
+
+`
+export const Secimler = styled.div`
+display: flex;
+width:100%;
+justify-content: space-between;
+
+`
+export const Toplam = styled.div`
+display: flex;
+width:100%;
+justify-content: space-between;
+
+`
+export const SonucBaslik = styled.div`
 
 `
