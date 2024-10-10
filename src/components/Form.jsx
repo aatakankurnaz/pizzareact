@@ -1,7 +1,7 @@
 import {
     AraYazı, Baslik, Boyut, BoyutOption, Fiyat, FiyatPuan, FormAnaDiv, FormUstDiv, FormUstP,
-    Hamur, HamurOption, Not, Options1, Options2, Puan,
-    UrunBilgi, Wrapper, IsimDiv, IsimInput, TextArea,
+    Hamur, HamurOption, Options1, Options2, Puan,
+    UrunBilgi, Wrapper,
     Cizgi,
     Tutar,
     SiparisSayı,
@@ -11,11 +11,11 @@ import {
     SiparisVer,
     AltKısım, Arttır,
     SonucYazi,
-    ButtonDiv,
     Secimler,
     Toplam,
-    SonucBaslik
+    SonucBaslik,
 } from "../styles"
+import Isim from "./Isim"
 
 export default function Form() {
 
@@ -93,17 +93,8 @@ export default function Form() {
                         return <label key={malzeme.id}><input type="checkbox" />{malzeme.name}</label>
                     })}
                 </Options2>
-                <Not>
-                    <h1 style={{ fontWeight: "bold", fontSize: "24px" }}>Sipariş Notu</h1>
-                    <IsimDiv>
-                        <label htmlFor="1" >İsim:</label>
-                        <IsimInput type="text" id="1" />
-                        <label htmlFor="1" >Soyisim:</label>
-                        <IsimInput type="text" id="1" />
-                        <TextArea type="textarea" placeholder="   Siparişine eklemek istediğin bir not var mı?" />
-                    </IsimDiv>
-                    <Cizgi />
-                </Not>
+                <Isim />
+                <Cizgi />
                 <AltKısım>
                     <SiparisSayı>
                         <Azalt>-</Azalt>
@@ -121,8 +112,8 @@ export default function Form() {
                                     <p style={{ color: "#5F5F5F", fontWeight: "bold" }}>25.00₺</p>
                                 </Secimler>
                                 <Toplam>
-                                    <p style={{ color: "#5F5F5F", fontWeight: "bold", color: "#CE2829" }}>Toplam</p>
-                                    <p style={{ color: "#5F5F5F", fontWeight: "bold", color: "#CE2829" }}>110.50₺</p>
+                                    <p style={{fontWeight: "bold", color: "#CE2829" }}>Toplam</p>
+                                    <p style={{ fontWeight: "bold", color: "#CE2829" }}>110.50₺</p>
                                 </Toplam>
                             </SonucYazi>
                         </Sonuc>

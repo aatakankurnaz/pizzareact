@@ -161,7 +161,7 @@ display:flex;
 flex-direction: column;
 row-gap: 5px;
 `
-export const IsimInput = styled.input`
+export const IsimSoyisimInput = styled.input`
 max-width: 200px;
 border: 1px solid #D9D9D9;
 border-radius: 6px
@@ -240,9 +240,6 @@ margin-bottom:100px;
 `
 export const SonucYazi = styled.div`
 width:100%
-`
-export const ButtonDiv = styled.div`
-
 `
 export const Secimler = styled.div`
 display: flex;
