@@ -177,16 +177,20 @@ export const Cizgi = styled.div`
  margin-bottom: 40px;
 `;
 
-export const SiparisSayı = styled.div`
-display:flex;
-width:50%;
+export const AltKısım = styled.div`
+display: flex;
+gap:10px;
+margin-bottom:100px;
 `
-export const Tutar = styled.div`
-display:flex;
-flex-direction:column;
+export const Arttır = styled.button`
 width:100%;
-border: 1px solid #D9D9D9;
-border-radius:6px;
+max-height:18%;
+background:#FDC913;
+border-top-right-radius:6px;
+border-bottom-right-radius:6px;
+border:none;
+font-weight: bold;
+font-size:16px;
 `
 export const Azalt = styled.button`
 width:100%;
@@ -209,20 +213,9 @@ font-weight: bold;
 
 
 `
-export const Arttır = styled.button`
-width:100%;
-max-height:18%;
-background:#FDC913;
-border-top-right-radius:6px;
-border-bottom-right-radius:6px;
-border:none;
-font-weight: bold;
-font-size:16px;
-`
-
-
-export const Sonuc = styled.div`
- margin:35px
+export const SiparisSayı = styled.div`
+display:flex;
+width:50%;
 `
 export const SiparisVer = styled.button`
  width:100%;
@@ -233,10 +226,18 @@ export const SiparisVer = styled.button`
 border-radius:6px;
 border:none;
 `
-export const AltKısım = styled.div`
-display: flex;
-gap:10px;
-margin-bottom:100px;
+export const Sonuc = styled.div`
+ padding: 30px;
+`
+export const SonucBaslik = styled.div`
+
+`
+export const Tutar = styled.div`
+display:flex;
+flex-direction:column;
+width:100%;
+border: 1px solid #D9D9D9;
+border-radius:6px;
 `
 export const SonucYazi = styled.div`
 width:100%
@@ -251,8 +252,5 @@ export const Toplam = styled.div`
 display: flex;
 width:100%;
 justify-content: space-between;
-
-`
-export const SonucBaslik = styled.div`
 
 `
