@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Options2 } from "../styles";
 
-export default function Options2Comp() {
-
+export default function Options2Comp(props) {
+    const {selectedIngredientsState, handleIngredientsChange, errorIngredientsState} = props;
     
 
     const malzemeler = [
@@ -27,40 +27,7 @@ export default function Options2Comp() {
         below: "Lütfen en az 4 malzeme seçiniz"
     };
 
-    const [selectedIngredientsState, setSelectedIngredientsState] = useState([]);
-    const [errorIngredientsState, setErrorIngredientsState] = useState({
-        high: false,
-        below: false
-    });
-
-    const handleIngredientsChange = (event) => {
-        const { name, checked } = event.target;
-
-        
-        if (checked) {
-            
-            const updatedIngredients = [...selectedIngredientsState, name];
-
-            
-            if (updatedIngredients.length > 10) {
-                setErrorIngredientsState({ high: true, below: false });
-            } else {
-                setSelectedIngredientsState(updatedIngredients);
-                
-                setErrorIngredientsState({ high: false, below: updatedIngredients.length < 4 });
-            }
-        } else {
-           
-            const updatedIngredients = selectedIngredientsState.filter((option) => option !== name);
-            setSelectedIngredientsState(updatedIngredients);
-
-           
-            setErrorIngredientsState({ 
-                high: false, 
-                below: updatedIngredients.length < 4 
-            });
-        }
-    };
+    
     console.log(selectedIngredientsState);
     return (
         <>

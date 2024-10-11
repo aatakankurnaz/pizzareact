@@ -3,7 +3,7 @@ import AmountDetail from "./AmountDetail";
 
 export default function Amount(props) {
 
-    const {formattedPrice} = props;
+    const {price, selectedIngredientsState, pizzaNumber} = props;
 
     return (
         <Tutar>
@@ -11,7 +11,7 @@ export default function Amount(props) {
                 <SonucBaslik>
                     <h1 style={{ fontWeight: "bold", fontSize: "20px" }}>Sipariş Toplamı</h1>
                 </SonucBaslik>
-                <AmountDetail formattedPrice={formattedPrice}/>
+                <AmountDetail price={price} selectedIngredientsState={selectedIngredientsState} pizzaNumber={pizzaNumber}/>
                 </Sonuc>
                 <SiparisVer style={{ fontWeight: "bold", fontSize: "16px" }}>Sipariş Ver</SiparisVer>
             

@@ -1,13 +1,15 @@
+import { useState } from "react";
 import { Arttır, Azalt, Sayı, SiparisSayı } from "../styles";
 
-export default function IncDecComp() {
+export default function IncDecComp(props) {
+
+    const {pizzaNumber, pizzaNumberDec, pizzaNumberInc} = props;
 
     return(
-
         <SiparisSayı>
-                    <Azalt>-</Azalt>
-                    <Sayı>1</Sayı>
-                    <Arttır>+</Arttır>
+                    <Azalt onClick={pizzaNumberDec}>-</Azalt>
+                    <Sayı>{pizzaNumber}</Sayı>
+                    <Arttır onClick={pizzaNumberInc}>+</Arttır>
                 </SiparisSayı>
     )
 }

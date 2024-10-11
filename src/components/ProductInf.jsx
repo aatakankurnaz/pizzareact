@@ -3,14 +3,14 @@ import PriceValue from "./PriceValue";
 
 export default function ProductInf(props) {
 
-    const {formattedPrice} = props;
+    const {price} = props;
 
     return(
     <UrunBilgi>
         <h2>Position Absolute Acı Pizza</h2>
         <FiyatPuan>
             <Fiyat>
-                <PriceValue formattedPrice={formattedPrice} />
+                <PriceValue price={price} />
             </Fiyat>
             <Puan style={{ color: "#5F5F5F" }}>
                 <p>4.9</p>
