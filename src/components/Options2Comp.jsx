@@ -27,8 +27,6 @@ export default function Options2Comp(props) {
         below: "Lütfen en az 4 malzeme seçiniz"
     };
 
-    
-    console.log(selectedIngredientsState);
     return (
         <>
             <Options2>

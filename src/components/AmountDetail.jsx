@@ -4,18 +4,15 @@ import TotalAmount from "./TotalAmount";
 
 export default function AmountDetail(props) {
 
-    const {price, selectedIngredientsState, pizzaNumber} = props;
+    const {price, selectedIngredientsState, pizzaNumber, selectedTotalAmount, finalTotalAmount} = props;
 
-    const selectedTotalAmountCalc = () => {
-        return(selectedIngredientsState.length * 5) * pizzaNumber
-        } 
+     
     
-    const selectedTotalAmount = selectedTotalAmountCalc()
-
+    
     return(
     <SonucYazi>
-        <SelectedIncAmount selectedIngredientsState={selectedIngredientsState} selectedTotalAmountCalc={selectedTotalAmountCalc()}/>
-        <TotalAmount price={price} selectedTotalAmount={selectedTotalAmount} pizzaNumber={pizzaNumber}/>
+        <SelectedIncAmount selectedIngredientsState={selectedIngredientsState} selectedTotalAmount={selectedTotalAmount}/>
+        <TotalAmount price={price} selectedTotalAmount={selectedTotalAmount} pizzaNumber={pizzaNumber} finalTotalAmount={finalTotalAmount}/>
     </SonucYazi>
     )
 }

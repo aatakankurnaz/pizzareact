@@ -232,7 +232,7 @@ export const Sonuc = styled.div`
 export const SonucBaslik = styled.div`
 
 `
-export const Tutar = styled.div`
+export const Tutar = styled.form`
 display:flex;
 flex-direction:column;
 width:100%;

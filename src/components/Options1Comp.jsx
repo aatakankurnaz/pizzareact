@@ -1,19 +1,9 @@
 import { useState } from "react";
 import { Boyut, BoyutOption, Hamur, HamurOption, Options1 } from "../styles";
 
-export default function Options1Comp() {
+export default function Options1Comp(props) {
 
-    const[isCheckedSize, setIsCheckedSize] = useState()
-        
-    const handleChangeSize = (event) => {
-        
-        const {value} = event.target
-
-        setIsCheckedSize(value)
-     
-        console.log(isCheckedSize)
-        
-    }
+    const {CheckedSize, handleChangeSize, handleChangeThickness} = props;
 
     return(
 
@@ -21,18 +11,17 @@ export default function Options1Comp() {
                 <Boyut>
                     <h1 style={{ fontWeight: "bold", fontSize: "24px" }}>Boyut Seç</h1>
                     <BoyutOption>
-                        <label htmlFor="kucuk"><input type="radio" name="boyut" id="kucuk" onChange={handleChangeSize}/>Küçük</label>
-                        <label htmlFor="orta"><input type="radio" name="boyut" id="orta" onChange={handleChangeSize}/>Orta</label>
-                        <label htmlFor="buyuk"><input type="radio" name="boyut" id="buyuk" onChange={handleChangeSize}/>Büyük</label>
+                        <label htmlFor="kucuk"><input type="radio" name="boyut" id="kucuk" onChange={handleChangeSize} value="small" checked={CheckedSize === "small"}/>Küçük</label>
+                        <label htmlFor="orta"><input type="radio" name="boyut" id="orta" onChange={handleChangeSize} value="medium" checked={CheckedSize === "medium"}/>Orta</label>
+                        <label htmlFor="buyuk"><input type="radio" name="boyut" id="buyuk" onChange={handleChangeSize} value="large" checked={CheckedSize === "large"}/>Büyük</label>
                     </BoyutOption>
                 </Boyut>
                 <Hamur>
                     <h1 style={{ fontWeight: "bold", fontSize: "24px" }}>Hamur Seç</h1>
                     <HamurOption>
-                        <select name="" id="">
-                            <option value="">Hamur Kalınlığı</option>
-                            <option value="">İnce</option>
-                            <option value="">Normal</option>
+                        <select onChange={handleChangeThickness}>
+                            <option value="thin">İnce</option>
+                            <option value="thick">Normal</option>
                         </select>
                     </HamurOption>
                 </Hamur>

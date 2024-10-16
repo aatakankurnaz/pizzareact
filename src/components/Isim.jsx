@@ -1,41 +1,20 @@
 import { IsimDiv, IsimSoyisimInput, Not, TextArea } from "../styles";
 import { useState } from "react";
 
-export default function Isim() {
+export default function Isim(props) {
+    const {handleChangeNameSurname, NameSurnameState, NameSurnameErrorsState, nameErrorMessages} = props;
     
-    const NameSurnameForm = {
-        name: "",
-        surname: ""
-    };
 
     
-    const nameErrorMessages = {
-        nameError: "İsiminizi en az 3 karakter giriniz",
-        surnameError: "Soyisiminizi en az 3 karakter giriniz" 
-    };
+    
 
     
-    const [NameSurnameState, setNameSurnameState] = useState(NameSurnameForm);
-    const [NameSurnameErrorsState, setNameSurnameErrorsState] = useState({
-        name: false,
-        surname: false,
-    });
+    
+    
 
     
-    const handleChangeNameSurname = (event) => {
-        const { name, value } = event.target;
-        setNameSurnameState({ ...NameSurnameState, [name]: value }); 
-
-        
-        if (name === "name") {
-            setNameSurnameErrorsState({ ...NameSurnameErrorsState, [name]: value.trim().length < 3 });
-        }
-
-        if (name === "surname") { 
-            setNameSurnameErrorsState({ ...NameSurnameErrorsState, [name]: value.trim().length < 3 });
-        }
-    }
-
+    
+    // console.log(NameSurnameState)
     return (
         <Not>
             <h1 style={{ fontWeight: "bold", fontSize: "24px" }}>Sipariş Notu</h1>
@@ -61,8 +40,8 @@ export default function Isim() {
                     value={NameSurnameState.surname}
                 />
                 {NameSurnameErrorsState.surname && <p style={{ color: "red" }}>{nameErrorMessages.surnameError}</p>} 
-            
-                <TextArea type="textarea" placeholder="Siparişine eklemek istediğin bir not var mı?" />
+                <label htmlFor="note">Notunuz:</label>
+                <TextArea type="textarea" placeholder="Siparişine eklemek istediğin bir not var mı?" id="note" name="note" onChange={handleChangeNameSurname} value={NameSurnameState.note}/>
             </IsimDiv>
         </Not>
     );

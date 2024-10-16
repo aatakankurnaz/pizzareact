@@ -3,11 +3,11 @@ import PriceValue from "./PriceValue";
 
 export default function ProductInf(props) {
 
-    const {price} = props;
+    const {price, pizzaName} = props;
 
     return(
     <UrunBilgi>
-        <h2>Position Absolute Acı Pizza</h2>
+        <h2>{pizzaName}</h2>
         <FiyatPuan>
             <Fiyat>
                 <PriceValue price={price} />

@@ -8,14 +8,32 @@ import ProductInf from "./ProductInf";
 
 export default function MainComponent(props) {
 
-     const {price} = props;
+    const {price, pizzaName} = props;
     
+    const nameErrorMessages = {
+        nameError: "İsiminizi en az 3 karakter giriniz",
+        surnameError: "Soyisiminizi en az 3 karakter giriniz" 
+    };
+
+    const NameSurnameForm = {
+        name: "",
+        surname: "",
+        note:""
+    };
+
     const [selectedIngredientsState, setSelectedIngredientsState] = useState([]);
     const [errorIngredientsState, setErrorIngredientsState] = useState({
         high: false,
-        below: false
+        below: true
     });
-
+    const[CheckedSize, setCheckedSize] = useState("small")
+    const [selectedThickness, setSelectedThickness] = useState("thin")
+    const [NameSurnameState, setNameSurnameState] = useState(NameSurnameForm);
+    const [NameSurnameErrorsState, setNameSurnameErrorsState] = useState({
+        name: false,
+        surname: false,
+    });
+    
     const handleIngredientsChange = (event) => {
         const { name, checked } = event.target;
 
@@ -45,18 +63,50 @@ export default function MainComponent(props) {
         }
     };
 
+    const handleChangeSize = (event) => {
+        
+        const {value} = event.target
+
+        setCheckedSize(value)
+    }
+
+    const handleChangeThickness = (event) => {
+        const {value} = event.target
+
+        setSelectedThickness(value)
+
+    }
+    
+    const handleChangeNameSurname = (event) => {
+        const { name, value } = event.target;
+        setNameSurnameState({ ...NameSurnameState, [name]: value }); 
+
+        
+        if (name === "name") {
+            setNameSurnameErrorsState({ ...NameSurnameErrorsState, [name]: value.trim().length < 3 });
+        }
+
+        if (name === "surname") { 
+            setNameSurnameErrorsState({ ...NameSurnameErrorsState, [name]: value.trim().length < 3 });
+        }
+    }
+
+
+    // console.log(selectedIngredientsState)
+    // console.log(selectedThickness)
+    // console.log(CheckedSize)
     return (
         <FormAnaDiv>
-            <ProductInf price={price}/>
-            <Options1Comp />
+            <ProductInf price={price} pizzaName={pizzaName}/>
+            <Options1Comp CheckedSize={CheckedSize} handleChangeSize={handleChangeSize} handleChangeThickness={handleChangeThickness}/>
             <AraYazı>
                 <h1 style={{ fontWeight: "bold", fontSize: "24px" }}>Ek Malzemeler</h1>
                 <p style={{ color: "#5F5F5F" }}>En Fazla 10 malzeme seçebilirsiniz. 5₺</p>
             </AraYazı>
             <Options2Comp selectedIngredientsState={selectedIngredientsState} errorIngredientsState={errorIngredientsState} handleIngredientsChange={handleIngredientsChange}/>
-            <Isim />
+            <Isim handleChangeNameSurname={handleChangeNameSurname} NameSurnameState={NameSurnameState} NameSurnameErrorsState={NameSurnameErrorsState} nameErrorMessages={nameErrorMessages}/>
             <Cizgi />
-            <LowerComponent price={price} selectedIngredientsState={selectedIngredientsState}/>
+            <LowerComponent price={price} NameSurnameState={NameSurnameState} selectedIngredientsState={selectedIngredientsState} CheckedSize={CheckedSize} errorIngredientsState={errorIngredientsState} pizzaName={pizzaName} selectedThickness={selectedThickness}/>
         </FormAnaDiv>
 
     )

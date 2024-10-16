@@ -5,7 +5,7 @@ import IncDecComp from "./IncDecComp";
 
 export default function LowerComponent(props) {
 
-    const {price, selectedIngredientsState} = props;
+    const {price, selectedIngredientsState, CheckedSize, errorIngredientsState, pizzaName, selectedThickness, NameSurnameState} = props;
 
     const [pizzaNumber, setPizzaNumber] = useState(1)
 
@@ -22,7 +22,7 @@ export default function LowerComponent(props) {
 
         <AltKısım>
                 <IncDecComp pizzaNumberDec={pizzaNumberDec} pizzaNumber={pizzaNumber} pizzaNumberInc={pizzaNumberInc}/>
-                <Amount price={price} selectedIngredientsState={selectedIngredientsState} pizzaNumber={pizzaNumber}/>
+                <Amount price={price} NameSurnameState={NameSurnameState} selectedThickness={selectedThickness} selectedIngredientsState={selectedIngredientsState} pizzaNumber={pizzaNumber} CheckedSize={CheckedSize} errorIngredientsState={errorIngredientsState} pizzaName={pizzaName}/>
                 
         </AltKısım>
     )
