@@ -21,6 +21,7 @@ export default function Amount(props) {
             metin: ""
         }
 
+        
     })
 
     const selectedTotalAmountCalc = () => {
