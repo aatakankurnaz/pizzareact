@@ -7,6 +7,7 @@ export default function Amount(props) {
 
     const { price, selectedIngredientsState, pizzaNumber, CheckedSize, errorIngredientsState, pizzaName, selectedThickness, NameSurnameState } = props;
 
+
     const [isValid, setIsValid] = useState(false);
     const [fullData, setFullData] = useState({
         pizzaisim: pizzaName,
@@ -20,6 +21,8 @@ export default function Amount(props) {
             soyisim: "",
             metin: ""
         }
+
+
 
         
     })
@@ -81,7 +84,7 @@ export default function Amount(props) {
 
 
 
-
+//xd
 
     return (
         
