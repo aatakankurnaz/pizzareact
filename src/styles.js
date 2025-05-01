@@ -1,10 +1,10 @@
-import styled from 'styled-components';
+import styled from 'styled-components'; 
 
 
 export const UstKutu = styled.div`
   width: 100%;
   height: 1080px;
-  background-image: url("Assets/Iteration-1-assets/home-banner.png");
+  background-image: url("home-banner.png");
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
